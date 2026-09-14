@@ -557,8 +557,8 @@
   }
 
   function randDir(exclude) {
-    let pool = [...enabled].filter(i => i !== exclude)
-    if (pool.length === 0) pool = [...enabled]  // fallback if only 1 direction
+    let pool = [...enabled]
+    if (pool.length > 2) pool = pool.filter(i => i !== exclude)
     return pool[Math.floor(Math.random() * pool.length)]
   }
 
